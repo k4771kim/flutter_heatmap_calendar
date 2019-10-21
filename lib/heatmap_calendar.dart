@@ -42,8 +42,10 @@ class HeatMapCalendar extends StatefulWidget {
   /// Helps avoiding overspacing issues
   final double safetyMargin;
 
+  final Color defaultColor;
   const HeatMapCalendar(
       {Key key,
+      this.defaultColor = Colors.black12,
       @required this.input,
       @required this.colorThresholds,
       this.weekDaysLabels: TimeUtils.defaultWeekLabels,
@@ -109,6 +111,7 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
                   currentOpacity: currentOpacity,
                   monthLabels: widget.monthsLabels,
                   dayTextColor: widget.dayTextColor,
+                  defaultColor: widget.defaultColor,
                   columnsToCreate: getColumnsToCreate(constraints.maxWidth) - 1,
                 )
               ],

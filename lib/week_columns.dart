@@ -19,9 +19,10 @@ class WeekColumns extends StatelessWidget {
   final Color dayTextColor;
 
   final int columnsToCreate;
-
+  final Color defaultColor;
   const WeekColumns(
       {Key key,
+      this.defaultColor = Colors.black12,
       @required this.squareSize,
       @required this.labelTextColor,
       @required this.input,
@@ -76,6 +77,7 @@ class WeekColumns extends StatelessWidget {
           currentDay: currentDate.day,
           opacity: currentOpacity,
           textColor: dayTextColor,
+          defaultColor: defaultColor,
         );
         columnItems.add(heatMapDay);
       }
