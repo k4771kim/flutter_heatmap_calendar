@@ -107,10 +107,26 @@ class WeekColumns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: buildWeekItems(),
-      ),
-    );
+        child: Column(
+      children: <Widget>[
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: buildWeekItems(),
+        ),
+        Container(
+          margin: EdgeInsets.only(left: squareSize, top: 8),
+          child: Row(
+            children: colorThresholds.values
+                .map((color) => Container(
+                      margin: EdgeInsets.only(right: 2),
+                      width: squareSize,
+                      height: squareSize,
+                      color: color,
+                    ))
+                .toList(),
+          ),
+        )
+      ],
+    ));
   }
 }
